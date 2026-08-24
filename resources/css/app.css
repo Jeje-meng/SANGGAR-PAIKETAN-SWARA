@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: 'Playfair Display', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  --color-brand-bg: #FAF6F0;
+  --color-brand-dark: #261E14;
+  --color-brand-gold: #C99B53;
+  --color-brand-gold-hover: #B7863F;
+  --color-brand-forest: #1A2F1C;
+  --color-brand-red: #8B261E;
+}
+
+/* Custom CSS Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C99B53;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B7863F;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}

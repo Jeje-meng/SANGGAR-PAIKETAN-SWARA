@@ -87,14 +87,14 @@ export default function Home({ changePage }) {
         <div className="bg-[#FAF6F0]">
             
             {/* HERO SECTION */}
-            <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden rounded-b-[3.5rem] lg:rounded-b-[6rem] shadow-xl">
+            <section className="relative min-h-screen flex items-center justify-center pt-24 pb-28 md:pb-36 lg:pb-44 overflow-hidden">
                 {/* Background image overlay */}
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url('/images/image.png')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#1C150C]/90 via-[#261E14]/80 to-[#261E14]/40" />
-
+ 
                 <div className="relative z-10 max-w-5xl mx-auto px-4 text-center mt-8">
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-[#FAF6F0] font-bold leading-[1.1] mb-6">
                         Mengenal <span className="font-serif italic font-normal text-[#C99B53]">Budaya Bali</span> <br />
@@ -117,6 +117,18 @@ export default function Home({ changePage }) {
                             RESERVASI KUNJUNGAN
                         </button>
                     </div>
+                </div>
+
+                {/* SVG Wave Divider */}
+                <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
+                    <svg 
+                        viewBox="0 0 1200 120" 
+                        preserveAspectRatio="none" 
+                        className="relative block w-full h-[60px] md:h-[100px] text-[#FAF6F0]"
+                        fill="currentColor"
+                    >
+                        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V30.9C1122.4,51.86,1065.34,73.71,985.66,92.83Z"></path>
+                    </svg>
                 </div>
             </section>
 

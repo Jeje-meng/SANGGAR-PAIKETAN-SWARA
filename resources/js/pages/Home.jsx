@@ -87,13 +87,13 @@ export default function Home({ changePage }) {
         <div className="bg-[#FAF6F0]">
             
             {/* HERO SECTION */}
-            <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+            <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden rounded-b-[3.5rem] lg:rounded-b-[6rem] shadow-xl">
                 {/* Background image overlay */}
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1600&auto=format&fit=crop')` }}
+                    style={{ backgroundImage: `url('/images/image.png')` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#1C150C]/90 via-[#261E14]/80 to-[#FAF6F0]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#1C150C]/90 via-[#261E14]/80 to-[#261E14]/40" />
 
                 <div className="relative z-10 max-w-5xl mx-auto px-4 text-center mt-8">
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-[#FAF6F0] font-bold leading-[1.1] mb-6">

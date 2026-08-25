@@ -119,15 +119,15 @@ export default function Home({ changePage }) {
                     </div>
                 </div>
 
-                {/* SVG Wave Divider */}
+                {/* SVG Curve Divider */}
                 <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
                     <svg 
                         viewBox="0 0 1200 120" 
                         preserveAspectRatio="none" 
-                        className="relative block w-full h-[60px] md:h-[100px] text-[#FAF6F0]"
+                        className="relative block w-full h-[50px] md:h-[90px] text-[#FAF6F0]"
                         fill="currentColor"
                     >
-                        <path d="M0,60 C320,130 880,-10 1200,60 L1200,120 L0,120 Z"></path>
+                        <path d="M0,0 Q600,120 1200,0 L1200,120 L0,120 Z"></path>
                     </svg>
                 </div>
             </section>

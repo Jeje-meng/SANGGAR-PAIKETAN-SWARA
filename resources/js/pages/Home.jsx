@@ -1,29 +1,25 @@
 import React from 'react';
-import { Music, Accessibility, Sparkles, GraduationCap, MessageCircle, Globe, Star, Heart, Users, Compass, ChevronRight, Calendar } from 'lucide-react';
+import { Music, Accessibility, Sparkles, GraduationCap, MessageCircle, Globe, Star, Heart, Users, Compass, ChevronRight } from 'lucide-react';
 
 export default function Home({ changePage }) {
     const programs = [
         {
-            image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=600&auto=format&fit=crop",
-            icon: <Music className="w-5 h-5 text-[#261E14]" />,
+            icon: <Music className="w-8 h-8 text-[#C99B53]" />,
             title: "Belajar Gamelan Bali",
             desc: "Kenali berbagai instrumen gamelan, cara memainkannya, serta peran setiap instrumen dalam menciptakan sebuah komposisi yang harmonis."
         },
         {
-            image: "https://images.unsplash.com/photo-1518548419070-2c61b169c79d?q=80&w=600&auto=format&fit=crop",
-            icon: <Accessibility className="w-5 h-5 text-[#261E14]" />,
+            icon: <Accessibility className="w-8 h-8 text-[#C99B53]" />,
             title: "Belajar Tari Bali",
             desc: "Pelajari gerak-gerak dasar, ekspresi, postur dan kelenturan yang menjadi ciri khas tari Bali dari para penari terlatih dan berpengalaman."
         },
         {
-            image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=600&auto=format&fit=crop",
-            icon: <Sparkles className="w-5 h-5 text-[#261E14]" />,
+            icon: <Sparkles className="w-8 h-8 text-[#C99B53]" />,
             title: "Pertunjukan Seni",
             desc: "Saksikan kolaborasi pertunjukan gamelan dan tari yang dibawakan oleh para seniman berbakat dari Sanggar Paiketan Swara."
         },
         {
-            image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop",
-            icon: <GraduationCap className="w-5 h-5 text-[#261E14]" />,
+            icon: <GraduationCap className="w-8 h-8 text-[#C99B53]" />,
             title: "Kunjungan Edukasi",
             desc: "Program khusus untuk sekolah, universitas, komunitas, atau kelompok wisatawan yang ingin mendalami budaya Bali secara komprehensif."
         }
@@ -32,7 +28,6 @@ export default function Home({ changePage }) {
     const packages = [
         {
             num: "1",
-            image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=800&auto=format&fit=crop",
             title: "Pengalaman Gamelan Bali",
             desc: "Sesi 2 jam interaktif mengenal dan memainkan alat musik gamelan dasar. Cocok untuk semua rentang usia.",
             price: "Rp150.000",
@@ -40,7 +35,6 @@ export default function Home({ changePage }) {
         },
         {
             num: "2",
-            image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
             title: "Pengalaman Tari Bali",
             desc: "Sesi 2 jam mempelajari keanggunan dan dinamika gerak tari Bali, lengkap dengan pengenalan busana.",
             price: "Rp150.000",
@@ -48,7 +42,6 @@ export default function Home({ changePage }) {
         },
         {
             num: "3",
-            image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=800&auto=format&fit=crop",
             title: "Gamelan dan Tari Bali",
             desc: "Pengalaman komprehensif setengah hari yang seru, diakhiri dengan pertunjukan mini bersama.",
             price: "Rp220.000",
@@ -69,7 +62,7 @@ export default function Home({ changePage }) {
             desc: "Dapatkan wawasan langsung pada materialisme arsitektur radikal, tarian, dan upacara keagamaan."
         },
         {
-            icon: <GraduationCap className="w-6 h-6 text-[#C99B53]" />,
+            icon: <Star className="w-6 h-6 text-[#C99B53]" />,
             title: "Mempelajari dasar tari Bali",
             desc: "Kenalilah dasar, pementasan, mengerti akselerasi musikal. Belajar dari seniman tari dan dalang."
         },
@@ -86,7 +79,7 @@ export default function Home({ changePage }) {
         {
             icon: <Compass className="w-6 h-6 text-[#C99B53]" />,
             title: "Menikmati",
-            desc: "Jauh dari keramaian kotor dan kedamaian alam pedesaan yang sejuk."
+            desc: "Jauh dari keramaian kotor dan kedamaian alam pedesaan yang sejuk di Bali."
         }
     ];
 
@@ -107,27 +100,20 @@ export default function Home({ changePage }) {
                         Mengenal <span className="font-serif italic font-normal text-[#C99B53]">Budaya Bali</span> <br />
                         melalui <span className="font-serif italic font-normal text-[#C99B53]">Gamelan</span> dan <span className="font-serif italic font-normal text-[#C99B53]">Tari</span>
                     </h1>
-                    
-                    <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto font-sans leading-relaxed mb-4">
-                        Selamat datang di <span className="text-[#C99B53] font-semibold">Sanggar Paiketan Swara</span>, ruang pelestarian seni, pembelajaran budaya, dan kebersamaan masyarakat di <span className="text-white underline decoration-[#C99B53]">Desa Bantas, Tabanan, Bali</span>.
-                    </p>
                     <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto font-sans leading-relaxed mb-10">
-                        Kami mengajak pelajar, wisatawan, komunitas, dan pencinta budaya untuk mengenal gamelan dan tari Bali secara langsung bersama para pelaku seni lokal.
+                        Selamat datang di <span className="text-[#C99B53] font-semibold">Sanggar Paiketan Swara</span>, ruang pelestarian seni, pembelajaran budaya, dan kebersamaan masyarakat di <span className="text-white underline decoration-[#C99B53]">Desa Bantas, Tabanan, Bali</span>. Kami mengajak Anda mengenal gamelan dan tari secara langsung bersama para pelaku seni lokal.
                     </p>
-
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <button
                             onClick={() => changePage('programs')}
-                            className="w-full sm:w-auto px-8 py-4 bg-[#C99B53] hover:bg-[#B7863F] text-[#261E14] font-bold rounded-md shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center justify-center gap-2"
+                            className="w-full sm:w-auto px-8 py-4 bg-[#C99B53] hover:bg-[#B7863F] text-[#261E14] font-bold rounded-md shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                         >
-                            <Compass size={18} />
                             JELAJAHI PROGRAM
                         </button>
                         <button
                             onClick={() => changePage('reservation')}
-                            className="w-full sm:w-auto px-8 py-4 border border-[#C99B53] text-[#C99B53] hover:bg-[#C99B53]/15 font-bold rounded-md transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+                            className="w-full sm:w-auto px-8 py-4 border border-[#C99B53] text-[#C99B53] hover:bg-[#C99B53]/15 font-bold rounded-md transition-all duration-200 cursor-pointer"
                         >
-                            <Calendar size={18} />
                             RESERVASI KUNJUNGAN
                         </button>
                     </div>
@@ -141,7 +127,7 @@ export default function Home({ changePage }) {
                         className="relative block w-full h-[60px] md:h-[100px] text-[#FAF6F0]"
                         fill="currentColor"
                     >
-                        <path d="M0,10 C150,110 350,110 600,40 C850,110 1050,110 1200,10 L1200,120 L0,120 Z"></path>
+                        <path d="M0,60 C320,130 880,-10 1200,60 L1200,120 L0,120 Z"></path>
                     </svg>
                 </div>
             </section>
@@ -164,18 +150,16 @@ export default function Home({ changePage }) {
                             <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-sans">
                                 Kami merancang pengalaman partisipatif yang otentik, menghubungkan kearifan lokal dengan rasa ingin tahu wisatawan global maupun pelajar lokal.
                             </p>
-                            <div>
-                                <button
-                                    onClick={() => changePage('about')}
-                                    className="inline-flex items-center gap-1.5 text-[#C99B53] hover:underline hover:text-[#B7863F] font-bold text-sm transition-colors duration-200 mt-4 group cursor-pointer"
-                                >
-                                    Ketahui Lebih Lanjut
-                                    <span>➔</span>
-                                </button>
-                            </div>
+                            <button
+                                onClick={() => changePage('about')}
+                                className="inline-flex items-center gap-2 text-[#C99B53] hover:text-[#B7863F] font-bold text-sm transition-colors duration-200 mt-4 group cursor-pointer"
+                            >
+                                Ketahui Lebih Lanjut 
+                                <ChevronRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
+                            </button>
                         </div>
                         <div className="lg:col-span-5">
-                            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-[#C99B53]/10 transform hover:scale-[1.01] transition-transform duration-300">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#C99B53]/10 transform hover:scale-[1.01] transition-transform duration-300">
                                 <img
                                     src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=800&auto=format&fit=crop"
                                     alt="Belajar Gamelan"
@@ -197,33 +181,25 @@ export default function Home({ changePage }) {
                     <h2 className="text-3xl sm:text-4xl font-serif text-[#261E14] font-bold mb-4">
                         Pengalaman yang Kami Tawarkan
                     </h2>
-                    <div className="h-[2px] w-20 bg-[#C99B53] mx-auto mb-16" />
+                    <p className="text-sm text-gray-500 max-w-xl mx-auto mb-16">
+                        Pilihlah petualangan budaya Anda, dari pemula hingga program khusus.
+                    </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {programs.map((item, idx) => (
                             <div
                                 key={idx}
-                                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#C99B53]/30 flex flex-col group"
+                                className="bg-[#FAF6F0] rounded-xl p-8 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#C99B53]/30 flex flex-col items-center text-center group"
                             >
-                                <div className="relative h-44 w-full overflow-hidden">
-                                    <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                    <div className="absolute inset-0 bg-black/10" />
-                                    {/* Overlapping circular icon badge */}
-                                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#C99B53] flex items-center justify-center border-2 border-white shadow-md z-10 transition-transform duration-300 group-hover:scale-110">
-                                        {item.icon}
-                                    </div>
+                                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-inner mb-6 transition-transform duration-300 group-hover:scale-110">
+                                    {item.icon}
                                 </div>
-
-                                <div className="pt-8 pb-6 px-6 flex-grow flex flex-col justify-between">
-                                    <div className="text-center">
-                                        <h3 className="text-base font-serif font-bold text-[#261E14] mb-2">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-xs text-gray-500 leading-relaxed font-sans">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                </div>
+                                <h3 className="text-lg font-serif font-bold text-[#261E14] mb-3">
+                                    {item.title}
+                                </h3>
+                                <p className="text-sm text-gray-600 leading-relaxed">
+                                    {item.desc}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -248,73 +224,65 @@ export default function Home({ changePage }) {
                         {packages.map((item, idx) => (
                             <div
                                 key={idx}
-                                className={`rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 ${
+                                className={`rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 ${
                                     item.populer
-                                        ? 'bg-[#F5D5AE] text-[#261E14] shadow-xl scale-[1.02] lg:-translate-y-2'
-                                        : 'bg-white text-[#261E14] border border-gray-100 shadow-sm'
+                                        ? 'bg-[#C99B53] text-[#261E14] ring-4 ring-[#C99B53]/30 scale-[1.03] lg:-translate-y-2'
+                                        : 'bg-[#261E14] text-gray-200 border border-gray-800'
                                 }`}
                             >
-                                <div className="relative h-48 w-full overflow-hidden">
-                                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                                    <div className="absolute inset-0 bg-black/15" />
-                                    
-                                    {/* Number Badge */}
-                                    <span className="absolute top-4 left-4 w-8 h-8 rounded-full bg-[#C99B53] text-[#261E14] font-bold text-sm flex items-center justify-center shadow-md">
-                                        {item.num}
-                                    </span>
-
-                                    {/* Populer Tag */}
-                                    {item.populer && (
-                                        <span className="absolute top-4 right-4 bg-[#261E14] text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-md">
-                                            POPULER
+                                <div>
+                                    {/* Tag Populer */}
+                                    <div className="flex justify-between items-start mb-6">
+                                        <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                                            item.populer ? 'bg-[#261E14] text-[#C99B53]' : 'bg-[#C99B53] text-[#261E14]'
+                                        }`}>
+                                            {item.num}
                                         </span>
-                                    )}
+                                        {item.populer && (
+                                            <span className="bg-[#8B261E] text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                                                POPULER
+                                            </span>
+                                        )}
+                                    </div>
+
+                                    <h3 className="text-2xl font-serif font-bold mb-4">{item.title}</h3>
+                                    <p className={`text-sm leading-relaxed mb-6 ${item.populer ? 'text-[#261E14]/85' : 'text-gray-400'}`}>
+                                        {item.desc}
+                                    </p>
+
+                                    <div className={`h-[1px] w-full my-6 ${item.populer ? 'bg-[#261E14]/20' : 'bg-gray-800'}`} />
+
+                                    <ul className="space-y-3 mb-8">
+                                        {item.features.map((feat, fIdx) => (
+                                            <li key={fIdx} className="flex items-center gap-3 text-sm">
+                                                <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                                                    item.populer ? 'bg-[#8B261E]' : 'bg-[#C99B53]'
+                                                }`} />
+                                                <span>{feat}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
 
-                                <div className="p-6 sm:p-8 flex-grow flex flex-col justify-between">
-                                    <div>
-                                        <span className="text-[10px] uppercase font-bold tracking-wider text-[#C99B53] block mb-1">
-                                            PAKET {item.num}
+                                <div className="pt-6 border-t border-dashed border-[#261E14]/15">
+                                    <div className="flex items-baseline justify-between mb-6">
+                                        <span className="text-xs uppercase tracking-widest text-opacity-80">
+                                            Per Peserta
                                         </span>
-                                        <h3 className="text-xl font-serif font-bold text-[#261E14] mb-3">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-xs text-gray-600 leading-relaxed font-sans mb-6">
-                                            {item.desc}
-                                        </p>
-
-                                        <div className="h-[1px] w-full bg-gray-100 my-4" />
-
-                                        {/* Features with checkmarks */}
-                                        <ul className="space-y-3.5 mb-8">
-                                            {item.features.map((feat, fIdx) => (
-                                                <li key={fIdx} className="flex items-center gap-3 text-xs text-gray-700">
-                                                    <svg className="w-4 h-4 text-[#C99B53] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                                    </svg>
-                                                    <span>{feat}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    {/* Price and Button */}
-                                    <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
-                                        <div>
-                                            <span className="text-[10px] uppercase tracking-wider text-gray-400 block">
-                                                Per Peserta
-                                            </span>
-                                            <span className="text-xl sm:text-2xl font-serif font-bold text-[#261E14]">
-                                                {item.price}
-                                            </span>
+                                        <div className="flex items-baseline gap-1">
+                                            <span className="text-2xl sm:text-3xl font-serif font-bold">{item.price}</span>
                                         </div>
-                                        <button
-                                            onClick={() => changePage('reservation')}
-                                            className="px-5 py-2.5 bg-[#261E14] hover:bg-black text-white text-[10px] uppercase font-bold tracking-wider rounded-full shadow-md transition-colors duration-200 cursor-pointer"
-                                        >
-                                            Pilih Paket
-                                        </button>
                                     </div>
+                                    <button
+                                        onClick={() => changePage('reservation')}
+                                        className={`w-full py-3.5 text-center font-bold rounded-lg transition-all duration-200 cursor-pointer ${
+                                            item.populer
+                                                ? 'bg-[#261E14] text-[#C99B53] hover:bg-[#1C150C] shadow-md'
+                                                : 'bg-[#C99B53] text-[#261E14] hover:bg-[#B7863F]'
+                                        }`}
+                                    >
+                                        Pilih Paket
+                                    </button>
                                 </div>
                             </div>
                         ))}
@@ -344,7 +312,7 @@ export default function Home({ changePage }) {
                                 <h3 className="text-lg font-serif font-bold text-[#261E14] mb-3">
                                     {feat.title}
                                 </h3>
-                                <p className="text-sm text-gray-600 leading-relaxed font-sans">
+                                <p className="text-sm text-gray-600 leading-relaxed">
                                     {feat.desc}
                                 </p>
                             </div>

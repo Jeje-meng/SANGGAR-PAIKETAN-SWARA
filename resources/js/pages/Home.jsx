@@ -127,7 +127,7 @@ export default function Home({ changePage }) {
                         className="relative block w-full h-[60px] md:h-[100px] text-[#FAF6F0]"
                         fill="currentColor"
                     >
-                        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V30.9C1122.4,51.86,1065.34,73.71,985.66,92.83Z"></path>
+                        <path d="M0,60 C320,130 880,-10 1200,60 L1200,120 L0,120 Z"></path>
                     </svg>
                 </div>
             </section>

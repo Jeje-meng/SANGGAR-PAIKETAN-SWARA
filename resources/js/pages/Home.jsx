@@ -4,24 +4,28 @@ import { Music, Accessibility, Sparkles, GraduationCap, MessageCircle, Globe, St
 export default function Home({ changePage }) {
     const programs = [
         {
-            icon: <Music className="w-8 h-8 text-[#C99B53]" />,
+            icon: <Music className="w-6 h-6 text-[#C99B53]" />,
             title: "Belajar Gamelan Bali",
-            desc: "Kenali berbagai instrumen gamelan, cara memainkannya, serta peran setiap instrumen dalam menciptakan sebuah komposisi yang harmonis."
+            desc: "Kenali berbagai instrumen gamelan, cara memainkannya, serta peran setiap instrumen dalam menciptakan sebuah komposisi yang harmonis.",
+            img: "/images/news_banner.png"
         },
         {
-            icon: <Accessibility className="w-8 h-8 text-[#C99B53]" />,
+            icon: <Accessibility className="w-6 h-6 text-[#C99B53]" />,
             title: "Belajar Tari Bali",
-            desc: "Pelajari gerak-gerak dasar, ekspresi, postur dan kelenturan yang menjadi ciri khas tari Bali dari para penari terlatih dan berpengalaman."
+            desc: "Pelajari gerak-gerak dasar, ekspresi, postur dan kelenturan yang menjadi ciri khas tari Bali dari para penari terlatih dan berpengalaman.",
+            img: "/images/about_banner.png"
         },
         {
-            icon: <Sparkles className="w-8 h-8 text-[#C99B53]" />,
+            icon: <Sparkles className="w-6 h-6 text-[#C99B53]" />,
             title: "Pertunjukan Seni",
-            desc: "Saksikan kolaborasi pertunjukan gamelan dan tari yang dibawakan oleh para seniman berbakat dari Sanggar Paiketan Swara."
+            desc: "Saksikan kolaborasi pertunjukan gamelan dan tari yang dibawakan oleh para seniman berbakat dari Sanggar Paiketan Swara.",
+            img: "/images/partnership_banner.png"
         },
         {
-            icon: <GraduationCap className="w-8 h-8 text-[#C99B53]" />,
+            icon: <GraduationCap className="w-6 h-6 text-[#C99B53]" />,
             title: "Kunjungan Edukasi",
-            desc: "Program khusus untuk sekolah, universitas, komunitas, atau kelompok wisatawan yang ingin mendalami budaya Bali secara komprehensif."
+            desc: "Program khusus untuk sekolah, universitas, komunitas, atau kelompok wisatawan yang ingin mendalami budaya Bali secara komprehensif.",
+            img: "/images/gallery_banner.png"
         }
     ];
 
@@ -189,17 +193,32 @@ export default function Home({ changePage }) {
                         {programs.map((item, idx) => (
                             <div
                                 key={idx}
-                                className="bg-[#FAF6F0] rounded-xl p-8 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#C99B53]/30 flex flex-col items-center text-center group"
+                                className="relative bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col group text-left"
                             >
-                                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-inner mb-6 transition-transform duration-300 group-hover:scale-110">
+                                {/* Photo Header */}
+                                <div className="relative h-44 overflow-hidden">
+                                    <img 
+                                        src={item.img} 
+                                        alt={item.title} 
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                                </div>
+                                
+                                {/* Floating Pin Badge */}
+                                <div className="absolute right-6 top-38 w-12 h-12 rounded-full bg-white border border-[#C99B53]/30 shadow-md flex items-center justify-center text-[#C99B53] z-10">
                                     {item.icon}
                                 </div>
-                                <h3 className="text-lg font-serif font-bold text-[#261E14] mb-3">
-                                    {item.title}
-                                </h3>
-                                <p className="text-sm text-gray-600 leading-relaxed">
-                                    {item.desc}
-                                </p>
+
+                                {/* Card Body */}
+                                <div className="p-6 pt-8 flex-grow flex flex-col">
+                                    <h3 className="text-lg font-serif font-bold text-[#261E14] mb-3">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-xs text-gray-500 leading-relaxed font-sans">
+                                        {item.desc}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>

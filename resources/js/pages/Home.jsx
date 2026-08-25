@@ -87,13 +87,13 @@ export default function Home({ changePage }) {
         <div className="bg-[#FAF6F0]">
             
             {/* HERO SECTION */}
-            <section className="relative min-h-screen flex items-center justify-center pt-24 pb-28 md:pb-36 lg:pb-44 overflow-hidden">
+            <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
                 {/* Background image overlay */}
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url('/images/image.png')` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#1C150C]/90 via-[#261E14]/80 to-[#261E14]/40" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#1C150C]/90 via-[#261E14]/80 to-[#FAF6F0]" />
  
                 <div className="relative z-10 max-w-5xl mx-auto px-4 text-center mt-8">
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-[#FAF6F0] font-bold leading-[1.1] mb-6">
@@ -117,18 +117,6 @@ export default function Home({ changePage }) {
                             RESERVASI KUNJUNGAN
                         </button>
                     </div>
-                </div>
-
-                {/* SVG Curve Divider */}
-                <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
-                    <svg 
-                        viewBox="0 0 1200 120" 
-                        preserveAspectRatio="none" 
-                        className="relative block w-full h-[50px] md:h-[90px] text-[#FAF6F0]"
-                        fill="currentColor"
-                    >
-                        <path d="M0,0 Q600,120 1200,0 L1200,120 L0,120 Z"></path>
-                    </svg>
                 </div>
             </section>
 

@@ -34,12 +34,12 @@ export default function About() {
         <div className="bg-[#FAF6F0] min-h-screen">
             
             {/* HERO HEADER */}
-            <section className="relative py-32 md:py-40 flex items-center justify-center overflow-hidden">
+            <section className="relative py-32 md:py-40 pb-24 md:pb-32 flex items-center justify-center overflow-hidden">
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url('/images/about_banner.png')` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#1C150C]/90 via-[#261E14]/85 to-[#FAF6F0]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#1C150C]/90 via-[#261E14]/85 to-[#261E14]/40" />
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4 text-center mt-12 space-y-6">
                     <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase block">
@@ -52,6 +52,18 @@ export default function About() {
                     <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
                         Menjaga tradisi, menghidupkan budaya, dan mewariskan keindahan seni Bali kepada dunia.
                     </p>
+                </div>
+
+                {/* SVG Slant Divider */}
+                <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
+                    <svg 
+                        viewBox="0 0 1200 120" 
+                        preserveAspectRatio="none" 
+                        className="relative block w-full h-[40px] md:h-[70px] text-[#FAF6F0]"
+                        fill="currentColor"
+                    >
+                        <path d="M0,60 L1200,100 L1200,120 L0,120 Z"></path>
+                    </svg>
                 </div>
             </section>
 

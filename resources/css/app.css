@@ -30,7 +30,9 @@
   background: #B7863F;
 }
 
-/* Smooth Scrolling */
+/* Smooth Scrolling & Prevent Layout Shift */
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }

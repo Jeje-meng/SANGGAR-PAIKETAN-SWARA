@@ -15,10 +15,16 @@ export default function App() {
     const [page, setPage] = useState('home');
     const [renderedPage, setRenderedPage] = useState('home');
     const [visible, setVisible] = useState(true);
+    const [progress, setProgress] = useState(0);
+    const [progressVisible, setProgressVisible] = useState(false);
 
     const changePage = (newPage) => {
         if (newPage === page) return;
-        document.documentElement.classList.add('transitioning');
+        
+        // Start gold loading bar
+        setProgressVisible(true);
+        setProgress(30);
+        
         setVisible(false);
         setPage(newPage);
     };
@@ -30,24 +36,26 @@ export default function App() {
                 setVisible(true);
                 window.scrollTo({ top: 0, behavior: 'instant' });
                 
-                const restoreTimer = setTimeout(() => {
-                    document.documentElement.classList.remove('transitioning');
-                    window.dispatchEvent(new Event('scroll'));
-                    window.scrollBy(0, 1);
-                    window.scrollBy(0, -1);
-                }, 150);
-
-                const finalTimer = setTimeout(() => {
-                    window.dispatchEvent(new Event('scroll'));
-                    window.scrollBy(0, 1);
-                    window.scrollBy(0, -1);
-                }, 450);
+                // Complete loading progress bar
+                setProgress(100);
                 
+                const hideTimer = setTimeout(() => {
+                    setProgressVisible(false);
+                    setProgress(0);
+                }, 300);
+
+                // Force recalculation for IntersectionObservers
+                const reflowTimer = setTimeout(() => {
+                    window.dispatchEvent(new Event('scroll'));
+                    window.scrollBy(0, 1);
+                    window.scrollBy(0, -1);
+                }, 50);
+
                 return () => {
-                    clearTimeout(restoreTimer);
-                    clearTimeout(finalTimer);
+                    clearTimeout(hideTimer);
+                    clearTimeout(reflowTimer);
                 };
-            }, 400); // 400ms transitions
+            }, 150); // fast 150ms fade-out transition
             return () => clearTimeout(timer);
         }
     }, [page, visible]);
@@ -77,6 +85,15 @@ export default function App() {
 
     return (
         <div className="flex flex-col min-h-screen bg-[#FAF6F0] text-[#261E14] font-sans selection:bg-[#C99B53] selection:text-white overflow-x-hidden">
+            {/* Top Gold Loading Bar */}
+            <div 
+                className="fixed top-0 left-0 h-[3px] bg-[#C99B53] z-[9999] transition-all duration-300 ease-out shadow-[0_0_8px_#C99B53] pointer-events-none"
+                style={{ 
+                    width: `${progress}%`, 
+                    opacity: progressVisible ? 1 : 0 
+                }}
+            />
+            
             <Navbar currentPage={page} changePage={changePage} />
             <main className="flex-grow min-h-[75vh] overflow-x-hidden">
                 <PageWrapper visible={visible}>

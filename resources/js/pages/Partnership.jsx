@@ -30,7 +30,7 @@ export default function Partnership() {
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url('/images/partnership_banner.png')` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-[#261E14]/25 to-[#FAF6F0]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-[#FAF6F0]" />
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4 text-center mt-12 space-y-6">
                     <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase block">
@@ -40,7 +40,7 @@ export default function Partnership() {
                         Dukung Pelestarian Seni
                     </h1>
                     <div className="h-[2px] w-20 bg-[#C99B53] mx-auto" />
-                    <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-base sm:text-lg text-gray-100 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
                         Kami mengundang organisasi, perusahaan, yayasan, dan individu untuk berkolaborasi mendukung keberlanjutan regenerasi seni tari dan gamelan Bali.
                     </p>
                 </div>

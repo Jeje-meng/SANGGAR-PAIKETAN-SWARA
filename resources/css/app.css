@@ -15,20 +15,6 @@
   --color-brand-red: #8B261E;
 }
 
-/* Custom CSS Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #FAF6F0;
-}
-::-webkit-scrollbar-thumb {
-  background: #C99B53;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #B7863F;
-}
 
 /* Smooth Scrolling & Prevent Layout Shift */
 html {

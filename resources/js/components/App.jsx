@@ -32,8 +32,21 @@ export default function App() {
                 
                 const restoreTimer = setTimeout(() => {
                     document.documentElement.classList.remove('transitioning');
-                }, 100);
-                return () => clearTimeout(restoreTimer);
+                    window.dispatchEvent(new Event('scroll'));
+                    window.scrollBy(0, 1);
+                    window.scrollBy(0, -1);
+                }, 150);
+
+                const finalTimer = setTimeout(() => {
+                    window.dispatchEvent(new Event('scroll'));
+                    window.scrollBy(0, 1);
+                    window.scrollBy(0, -1);
+                }, 450);
+                
+                return () => {
+                    clearTimeout(restoreTimer);
+                    clearTimeout(finalTimer);
+                };
             }, 400); // 400ms transitions
             return () => clearTimeout(timer);
         }

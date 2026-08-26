@@ -28,7 +28,7 @@ export default function App() {
                 setRenderedPage(page);
                 setVisible(true);
                 window.scrollTo({ top: 0, behavior: 'instant' });
-            }, 300); // 300ms transitions
+            }, 400); // 400ms transitions
             return () => clearTimeout(timer);
         }
     }, [page, visible]);

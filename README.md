@@ -61,6 +61,12 @@ Untuk kompilasi asset secara *real-time* (Hot Module Replacement):
 npm run dev
 ```
 
+### 🔑 Akses Dasbor Admin
+Setelah server berjalan, Anda dapat mengelola konten website (CMS) dengan mengakses Dasbor Admin:
+- **URL**: [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+- **Email**: `admin@sanggar.com`
+- **Password**: `password`
+
 ---
 
 ## 🎭 Animasi Transisi Halaman (Fade-In-Out)

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Landmark, GraduationCap, Home, Plane, Bed, Users, Newspaper, Heart, Handshake, Check } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
-export default function Partnership() {
+export default function Partnership({ content }) {
     const [submitted, setSubmitted] = useState(false);
     const formRef = useRef(null);
     const [formData, setFormData] = useState({
@@ -43,6 +43,26 @@ export default function Partnership() {
         { icon: <Handshake size={20} />, title: "Mitra Program CSR" }
     ];
 
+    const tiers = [
+        {
+            title: "Sahabat Sanggar",
+            desc: "Dukungan dasar untuk operasional sanggar dan penyediaan konsumsi peserta didik anak-anak lokal.",
+            benefits: ["Nama tertera di plakat apresiasi tahunan", "Akses VIP ke pementasan rutin bulanan", "Newsletter perkembangan sanggar"]
+        },
+        {
+            title: "Pelindung Budaya",
+            desc: "Membantu pengadaan instrumen gamelan baru dan perbaikan berkala kostum pementasan tari.",
+            benefits: ["Semua keuntungan Sahabat Sanggar", "Voucher kunjungan edu-wisata untuk 5 orang", "Sesi foto eksklusif berbusana tari Bali"],
+            populer: true
+        },
+        {
+            title: "Pilar Pelestari",
+            desc: "Dukungan utama untuk beasiswa penuh anak-anak bertalenta dan riset konservasi gending kuno.",
+            benefits: ["Semua keuntungan Pelindung Budaya", "Pementasan privat khusus di acara perusahaan/keluarga", "Logo perusahaan/komunitas tertera di media promosi utama"]
+        }
+    ];
+    ];
+
     return (
         <div className="bg-[#FAF6F0] min-h-screen pb-20 font-sans">
             
@@ -50,16 +70,20 @@ export default function Partnership() {
             <section className="relative py-32 md:py-40 flex items-center justify-center overflow-hidden">
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('/images/partnership_banner.png')` }}
+                    style={{ backgroundImage: `url('${content('partnership_banner', '/images/partnership_banner.png').startsWith('http') || content('partnership_banner', '/images/partnership_banner.png').startsWith('/') ? content('partnership_banner', '/images/partnership_banner.png') : `/storage/${content('partnership_banner', '')}`}')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-[#261E14]/30" />
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4 text-center mt-12 space-y-6">
-                    <h1 className="text-3xl sm:text-5xl font-serif text-white font-bold leading-tight tracking-wide">
-                        Kemitraan & Kolaborasi Budaya
+                    <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase block">
+                        — KEMITRAAN & SPONSORSHIP
+                    </span>
+                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-white font-bold leading-tight tracking-wide">
+                        {content('partnership_hero_title', 'Kemitraan & Kolaborasi Budaya')}
                     </h1>
-                    <p className="text-sm sm:text-base text-gray-200 max-w-2xl mx-auto leading-relaxed">
-                        Bergabunglah bersama Sanggar Paiketan Swara dalam misi melestarikan warisan seni budaya Bali melalui kemitraan strategis yang berkelanjutan.
+                    <div className="h-[2px] w-20 bg-[#C99B53] mx-auto" />
+                    <p className="text-sm sm:text-base text-gray-200 max-w-2xl mx-auto leading-relaxed whitespace-pre-wrap">
+                        {content('partnership_hero_desc', 'Bergabunglah bersama Sanggar Paiketan Swara dalam misi melestarikan warisan seni budaya Bali melalui kemitraan strategis yang berkelanjutan.')}
                     </p>
                     <button 
                         onClick={scrollToForm}
@@ -82,11 +106,53 @@ export default function Partnership() {
                 </div>
             </section>
 
-            {/* MAIN CONTAINER */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+                {/* Grid tiers */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+                    {tiers.map((tier, idx) => (
+                        <div
+                            key={idx}
+                            className={`rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 ${
+                                tier.populer
+                                    ? 'bg-[#261E14] text-[#FAF6F0] ring-4 ring-[#C99B53]/30 scale-[1.02] lg:-translate-y-2'
+                                    : 'bg-white text-[#261E14] border border-gray-100 shadow-sm'
+                            }`}
+                        >
+                            <div>
+                                <h3 className={`text-xl sm:text-2xl font-serif font-bold mb-3 ${
+                                    tier.populer ? 'text-[#C99B53]' : 'text-[#261E14]'
+                                }`}>
+                                    {tier.title}
+                                </h3>
+                                <p className={`text-xs sm:text-sm leading-relaxed mb-6 ${
+                                    tier.populer ? 'text-gray-400' : 'text-gray-500'
+                                }`}>
+                                    {tier.desc}
+                                </p>
+                                <div className="h-[1px] bg-gray-200 w-full my-6 opacity-30" />
+                                <ul className="space-y-3 mb-8">
+                                    {tier.benefits.map((ben, bIdx) => (
+                                        <li key={bIdx} className="flex items-start gap-3 text-xs sm:text-sm">
+                                            <span className="text-[#C99B53] mt-1 shrink-0">•</span>
+                                            <span>{ben}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <button className={`w-full py-3 text-center font-bold text-xs rounded-md shadow-sm transition-all duration-200 cursor-pointer ${
+                                tier.populer
+                                    ? 'bg-[#C99B53] text-[#261E14] hover:bg-[#B7863F]'
+                                    : 'bg-[#261E14] text-white hover:bg-black'
+                            }`} onClick={scrollToForm}>
+                                Hubungi Kemitraan
+                            </button>
+                        </div>
+                    ))}
+                </div>
+
                 {/* SECTION: MITRA POTENSIAL */}
-                <section className="space-y-12">
+                <section className="space-y-12 mb-20">
                     <div className="text-center">
                         <h2 className="text-3xl font-serif font-bold text-[#261E14]">
                             Mitra Potensial
@@ -114,14 +180,22 @@ export default function Partnership() {
                     </div>
                 </section>
 
-                {/* SECTION: BENTUK KERJA SAMA */}
-                <ScrollReveal distance="30px" className="mt-16">
-                    <div className="bg-[#FAF6F0] border border-[#C99B53]/20 rounded-2xl p-8 sm:p-10 text-center max-w-4xl mx-auto shadow-sm">
-                        <h3 className="font-serif text-[#261E14] text-lg sm:text-xl font-bold mb-3">
-                            Bentuk Kerja Sama
-                        </h3>
-                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-medium">
-                            Bentuk kerja sama dapat berupa kunjungan edukasi, pelatihan, pertunjukan, promosi budaya, penelitian, pendampingan, festival, maupun pengembangan program wisata berbasis masyarakat.
+                {/* Bottom Callout */}
+                <ScrollReveal distance="30px" className="mt-16 mb-20">
+                    <div className="bg-[#1A2F1C] text-[#FAF6F0] rounded-2xl p-8 sm:p-12 border border-[#C99B53]/20 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div className="lg:col-span-8 space-y-4">
+                            <span className="text-[#C99B53] font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+                                <Heart size={16} /> Kolaborasi CSR & Penelitian
+                            </span>
+                            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">
+                                {content('partnership_callout_title', 'Bekerja Sama Membuat Dampak Sosial Nyata')}
+                            </h2>
+                            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-2xl font-sans whitespace-pre-wrap">
+                                {content('partnership_callout_desc', 'Apakah institusi Anda memiliki fokus riset etnologi musik, program CSR pemberdayaan perempuan pelaku seni, atau kunjungan tahunan siswa? Kami dapat merancang proyek kerja sama jangka panjang yang relevan dan transparan.')}
+                            </p>
+                        </div>
+                    </div>
+                </ScrollReveal>
                         </p>
                     </div>
                 </ScrollReveal>

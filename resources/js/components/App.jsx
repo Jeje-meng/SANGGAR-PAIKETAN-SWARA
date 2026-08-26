@@ -57,9 +57,9 @@ export default function App() {
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-[#FAF6F0] text-[#261E14] font-sans selection:bg-[#C99B53] selection:text-white">
+        <div className="flex flex-col min-h-screen bg-[#FAF6F0] text-[#261E14] font-sans selection:bg-[#C99B53] selection:text-white overflow-x-hidden">
             <Navbar currentPage={page} changePage={changePage} />
-            <main className="flex-grow">
+            <main className="flex-grow min-h-[75vh] overflow-x-hidden">
                 <PageWrapper visible={visible}>
                     {renderCurrentPage()}
                 </PageWrapper>

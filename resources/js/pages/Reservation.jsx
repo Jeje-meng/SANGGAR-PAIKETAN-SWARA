@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Users, FileText, Check, Award, Shield } from 'lucide-react';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function Reservation() {
     const [submitted, setSubmitted] = useState(false);
@@ -69,37 +70,40 @@ export default function Reservation() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
                     
                     {/* Left details */}
-                    <div className="lg:col-span-4 bg-[#261E14] text-[#FAF6F0] rounded-2xl p-8 border border-[#C99B53]/15 shadow-xl flex flex-col justify-between space-y-8">
-                        <div className="space-y-6">
-                            <h3 className="text-xl font-serif font-bold text-[#C99B53] border-b border-gray-800 pb-4">
-                                Penting Sebelum Memesan
-                            </h3>
-                            <div className="space-y-4">
-                                <div className="flex gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#C99B53]/15 text-[#C99B53] flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
-                                    <p className="text-xs text-gray-300 leading-relaxed">Minimal peserta untuk paket reguler adalah 10 orang.</p>
-                                </div>
-                                <div className="flex gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#C99B53]/15 text-[#C99B53] flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
-                                    <p className="text-xs text-gray-300 leading-relaxed">Reservasi disarankan dilakukan paling lambat H-7 tanggal kunjungan.</p>
-                                </div>
-                                <div className="flex gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#C99B53]/15 text-[#C99B53] flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
-                                    <p className="text-xs text-gray-300 leading-relaxed">Kebijakan pembatalan atau perubahan jadwal gratis hingga H-3 kunjungan.</p>
+                    <ScrollReveal className="lg:col-span-4 flex" distance="40px">
+                        <div className="bg-[#261E14] text-[#FAF6F0] rounded-2xl p-8 border border-[#C99B53]/15 shadow-xl flex flex-col justify-between space-y-8 w-full">
+                            <div className="space-y-6">
+                                <h3 className="text-xl font-serif font-bold text-[#C99B53] border-b border-gray-800 pb-4">
+                                    Penting Sebelum Memesan
+                                </h3>
+                                <div className="space-y-4">
+                                    <div className="flex gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-[#C99B53]/15 text-[#C99B53] flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
+                                        <p className="text-xs text-gray-300 leading-relaxed">Minimal peserta untuk paket reguler adalah 10 orang.</p>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-[#C99B53]/15 text-[#C99B53] flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
+                                        <p className="text-xs text-gray-300 leading-relaxed">Reservasi disarankan dilakukan paling lambat H-7 tanggal kunjungan.</p>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-[#C99B53]/15 text-[#C99B53] flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
+                                        <p className="text-xs text-gray-300 leading-relaxed">Kebijakan pembatalan atau perubahan jadwal gratis hingga H-3 kunjungan.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="bg-[#FAF6F0]/5 border border-gray-800 rounded-xl p-5 space-y-3">
-                            <h4 className="font-serif text-sm font-bold text-[#C99B53]">Butuh Penyesuaian?</h4>
-                            <p className="text-[11px] text-gray-400 leading-relaxed">
-                                Jika Anda membawa rombongan besar (&gt; 50 orang) atau membutuhkan akomodasi makan/transportasi tambahan, tuliskan pada kolom catatan formulir.
-                            </p>
+                            <div className="bg-[#FAF6F0]/5 border border-gray-800 rounded-xl p-5 space-y-3">
+                                <h4 className="font-serif text-sm font-bold text-[#C99B53]">Butuh Penyesuaian?</h4>
+                                <p className="text-[11px] text-gray-400 leading-relaxed">
+                                    Jika Anda membawa rombongan besar (&gt; 50 orang) or membutuhkan akomodasi makan/transportasi tambahan, tuliskan pada kolom catatan formulir.
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Right Form */}
-                    <div className="lg:col-span-8 bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm flex flex-col justify-center">
+                    <ScrollReveal className="lg:col-span-8 flex" delay={200} distance="40px">
+                        <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm flex flex-col justify-center w-full">
                         {submitted ? (
                             <div className="text-center py-12 space-y-6">
                                 <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
@@ -272,7 +276,8 @@ export default function Reservation() {
                                 </button>
                             </form>
                         )}
-                    </div>
+                        </div>
+                    </ScrollReveal>
 
                 </div>
 

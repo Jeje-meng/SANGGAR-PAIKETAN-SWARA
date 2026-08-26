@@ -1,5 +1,6 @@
 import React from 'react';
 import { Landmark, Award, ShieldAlert, Heart, ArrowRight } from 'lucide-react';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function Partnership() {
     const tiers = [
@@ -51,65 +52,73 @@ export default function Partnership() {
                 {/* Grid tiers */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
                     {tiers.map((tier, idx) => (
-                        <div
+                        <ScrollReveal
                             key={idx}
-                            className={`rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 ${
-                                tier.populer
-                                    ? 'bg-[#261E14] text-[#FAF6F0] ring-4 ring-[#C99B53]/30 scale-[1.02] lg:-translate-y-2'
-                                    : 'bg-white text-[#261E14] border border-gray-100 shadow-sm'
-                            }`}
+                            delay={idx * 150}
+                            distance="40px"
+                            className="flex"
                         >
-                            <div>
-                                <h3 className={`text-xl sm:text-2xl font-serif font-bold mb-3 ${
-                                    tier.populer ? 'text-[#C99B53]' : 'text-[#261E14]'
+                            <div
+                                className={`rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 w-full ${
+                                    tier.populer
+                                        ? 'bg-[#261E14] text-[#FAF6F0] ring-4 ring-[#C99B53]/30 scale-[1.02] lg:-translate-y-2'
+                                        : 'bg-white text-[#261E14] border border-gray-100 shadow-sm'
+                                }`}
+                            >
+                                <div>
+                                    <h3 className={`text-xl sm:text-2xl font-serif font-bold mb-3 ${
+                                        tier.populer ? 'text-[#C99B53]' : 'text-[#261E14]'
+                                    }`}>
+                                        {tier.title}
+                                    </h3>
+                                    <p className={`text-xs sm:text-sm leading-relaxed mb-6 ${
+                                        tier.populer ? 'text-gray-400' : 'text-gray-500'
+                                    }`}>
+                                        {tier.desc}
+                                    </p>
+                                    <div className="h-[1px] bg-gray-200 w-full my-6 opacity-30" />
+                                    <ul className="space-y-3 mb-8">
+                                        {tier.benefits.map((ben, bIdx) => (
+                                            <li key={bIdx} className="flex items-start gap-3 text-xs sm:text-sm">
+                                                <span className="text-[#C99B53] mt-1 shrink-0">•</span>
+                                                <span>{ben}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <button className={`w-full py-3 text-center font-bold text-xs rounded-md shadow-sm transition-all duration-200 cursor-pointer ${
+                                    tier.populer
+                                        ? 'bg-[#C99B53] text-[#261E14] hover:bg-[#B7863F]'
+                                        : 'bg-[#261E14] text-white hover:bg-black'
                                 }`}>
-                                    {tier.title}
-                                </h3>
-                                <p className={`text-xs sm:text-sm leading-relaxed mb-6 ${
-                                    tier.populer ? 'text-gray-400' : 'text-gray-500'
-                                }`}>
-                                    {tier.desc}
-                                </p>
-                                <div className="h-[1px] bg-gray-200 w-full my-6 opacity-30" />
-                                <ul className="space-y-3 mb-8">
-                                    {tier.benefits.map((ben, bIdx) => (
-                                        <li key={bIdx} className="flex items-start gap-3 text-xs sm:text-sm">
-                                            <span className="text-[#C99B53] mt-1 shrink-0">•</span>
-                                            <span>{ben}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                    Hubungi Kemitraan
+                                </button>
                             </div>
-                            <button className={`w-full py-3 text-center font-bold text-xs rounded-md shadow-sm transition-all duration-200 cursor-pointer ${
-                                tier.populer
-                                    ? 'bg-[#C99B53] text-[#261E14] hover:bg-[#B7863F]'
-                                    : 'bg-[#261E14] text-white hover:bg-black'
-                            }`}>
-                                Hubungi Kemitraan
-                            </button>
-                        </div>
+                        </ScrollReveal>
                     ))}
                 </div>
 
                 {/* Bottom Callout */}
-                <div className="bg-[#1A2F1C] text-[#FAF6F0] rounded-2xl p-8 sm:p-12 border border-[#C99B53]/20 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div className="lg:col-span-8 space-y-4">
-                        <span className="text-[#C99B53] font-bold text-xs uppercase tracking-wider flex items-center gap-2">
-                            <Heart size={16} /> Kolaborasi CSR & Penelitian
-                        </span>
-                        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">
-                            Bekerja Sama Membuat Dampak Sosial Nyata
-                        </h2>
-                        <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-2xl font-sans">
-                            Apakah institusi Anda memiliki fokus riset etnologi musik, program CSR pemberdayaan perempuan pelaku seni, atau kunjungan tahunan siswa? Kami dapat merancang proyek kerja sama jangka panjang yang relevan dan transparan.
-                        </p>
+                <ScrollReveal distance="40px">
+                    <div className="bg-[#1A2F1C] text-[#FAF6F0] rounded-2xl p-8 sm:p-12 border border-[#C99B53]/20 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div className="lg:col-span-8 space-y-4">
+                            <span className="text-[#C99B53] font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+                                <Heart size={16} /> Kolaborasi CSR & Penelitian
+                            </span>
+                            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">
+                                Bekerja Sama Membuat Dampak Sosial Nyata
+                            </h2>
+                            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-2xl font-sans">
+                                Apakah institusi Anda memiliki fokus riset etnologi musik, program CSR pemberdayaan perempuan pelaku seni, atau kunjungan tahunan siswa? Kami dapat merancang proyek kerja sama jangka panjang yang relevan dan transparan.
+                            </p>
+                        </div>
+                        <div className="lg:col-span-4 flex justify-end">
+                            <button className="w-full lg:w-auto px-6 py-3.5 bg-[#C99B53] hover:bg-[#B7863F] text-[#261E14] font-bold text-xs rounded-md shadow-md flex items-center justify-center gap-2 transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer">
+                                Ajukan Proposal <ArrowRight size={16} />
+                            </button>
+                        </div>
                     </div>
-                    <div className="lg:col-span-4 flex justify-end">
-                        <button className="w-full lg:w-auto px-6 py-3.5 bg-[#C99B53] hover:bg-[#B7863F] text-[#261E14] font-bold text-xs rounded-md shadow-md flex items-center justify-center gap-2 transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer">
-                            Ajukan Proposal <ArrowRight size={16} />
-                        </button>
-                    </div>
-                </div>
+                </ScrollReveal>
 
             </div>
         </div>

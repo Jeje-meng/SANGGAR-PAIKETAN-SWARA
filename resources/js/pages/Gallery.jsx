@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Eye, Image as ImageIcon } from 'lucide-react';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function Gallery() {
     const [filter, setFilter] = useState('all');
@@ -64,30 +65,37 @@ export default function Gallery() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
                 {/* Filters */}
-                <div className="flex flex-wrap justify-center gap-3 mb-12">
-                    {categories.map(cat => (
-                        <button
-                            key={cat.id}
-                            onClick={() => setFilter(cat.id)}
-                            className={`px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 cursor-pointer ${
-                                filter === cat.id
-                                    ? 'bg-[#C99B53] text-[#261E14] shadow-md'
-                                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-                            }`}
-                        >
-                            {cat.label}
-                        </button>
-                    ))}
-                </div>
+                <ScrollReveal distance="20px">
+                    <div className="flex flex-wrap justify-center gap-3 mb-12">
+                        {categories.map(cat => (
+                            <button
+                                key={cat.id}
+                                onClick={() => setFilter(cat.id)}
+                                className={`px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 cursor-pointer ${
+                                    filter === cat.id
+                                        ? 'bg-[#C99B53] text-[#261E14] shadow-md'
+                                        : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                                }`}
+                            >
+                                {cat.label}
+                            </button>
+                        ))}
+                    </div>
+                </ScrollReveal>
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredItems.map((item, idx) => (
-                        <div
+                        <ScrollReveal
                             key={idx}
-                            className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm group relative cursor-pointer"
+                            delay={(idx % 3) * 150}
+                            distance="30px"
+                            className="flex"
                         >
-                            <div className="relative aspect-[4/3] overflow-hidden bg-gray-900">
+                            <div
+                                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm group relative cursor-pointer w-full"
+                            >
+                                <div className="relative aspect-[4/3] overflow-hidden bg-gray-900">
                                 <img
                                     src={item.image}
                                     alt={item.title}
@@ -111,7 +119,8 @@ export default function Gallery() {
                                     {item.desc}
                                 </p>
                             </div>
-                        </div>
+                            </div>
+                        </ScrollReveal>
                     ))}
                 </div>
 

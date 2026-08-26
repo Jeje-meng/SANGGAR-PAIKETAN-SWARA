@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, Award, Shield, Compass, Heart, Activity } from 'lucide-react';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function About() {
     const coreValues = [
@@ -60,42 +61,44 @@ export default function About() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
                     {/* Left Graphic Mockup representation of "5 Core Values" */}
-                    <div className="lg:col-span-5 bg-white rounded-2xl p-6 border border-[#C99B53]/20 shadow-md">
-                        <div className="space-y-4">
-                            <span className="text-xs font-bold text-[#C99B53] uppercase tracking-wider block">
-                                SANGGAR PAIKETAN SWARA
-                            </span>
-                            <h3 className="text-xl font-serif font-bold text-[#261E14]">
-                                5 Nilai Inti Kami
-                            </h3>
-                            <div className="h-[1px] bg-gray-200 w-full" />
-                            <div className="grid grid-cols-1 gap-3.5">
-                                <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">1</div>
-                                    <span className="font-serif text-sm font-semibold text-[#261E14]">Pasemetonan</span>
-                                </div>
-                                <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">2</div>
-                                    <span className="font-serif text-sm font-semibold text-[#261E14]">Kualitas Tinggi</span>
-                                </div>
-                                <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">3</div>
-                                    <span className="font-serif text-sm font-semibold text-[#261E14]">Taksu</span>
-                                </div>
-                                <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">4</div>
-                                    <span className="font-serif text-sm font-semibold text-[#261E14]">Inovasi</span>
-                                </div>
-                                <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">5</div>
-                                    <span className="font-serif text-sm font-semibold text-[#261E14]">Pengabdian</span>
+                    <ScrollReveal className="lg:col-span-5" distance="40px">
+                        <div className="bg-white rounded-2xl p-6 border border-[#C99B53]/20 shadow-md">
+                            <div className="space-y-4">
+                                <span className="text-xs font-bold text-[#C99B53] uppercase tracking-wider block">
+                                    SANGGAR PAIKETAN SWARA
+                                </span>
+                                <h3 className="text-xl font-serif font-bold text-[#261E14]">
+                                    5 Nilai Inti Kami
+                                </h3>
+                                <div className="h-[1px] bg-gray-200 w-full" />
+                                <div className="grid grid-cols-1 gap-3.5">
+                                    <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
+                                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">1</div>
+                                        <span className="font-serif text-sm font-semibold text-[#261E14]">Pasemetonan</span>
+                                    </div>
+                                    <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
+                                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">2</div>
+                                        <span className="font-serif text-sm font-semibold text-[#261E14]">Kualitas Tinggi</span>
+                                    </div>
+                                    <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
+                                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">3</div>
+                                        <span className="font-serif text-sm font-semibold text-[#261E14]">Taksu</span>
+                                    </div>
+                                    <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
+                                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">4</div>
+                                        <span className="font-serif text-sm font-semibold text-[#261E14]">Inovasi</span>
+                                    </div>
+                                    <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#C99B53]/10 flex items-center gap-3">
+                                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold text-[#C99B53]">5</div>
+                                        <span className="font-serif text-sm font-semibold text-[#261E14]">Pengabdian</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Right Visi & Misi texts */}
-                    <div className="lg:col-span-7 space-y-10">
+                    <ScrollReveal className="lg:col-span-7 space-y-10" delay={200} distance="40px">
                         {/* Visi */}
                         <div className="space-y-4">
                             <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase flex items-center gap-2">
@@ -138,14 +141,14 @@ export default function About() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
             {/* 5 CORE VALUES SECTION */}
             <section className="py-24 bg-white border-t border-[#C99B53]/15">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16 space-y-3">
+                    <ScrollReveal className="text-center mb-16 space-y-3" distance="30px">
                         <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase block">
                             — PRINSIP UTAMA —
                         </span>
@@ -156,24 +159,30 @@ export default function About() {
                             Prinsip-prinsip yang membimbing setiap langkah kami dalam berkarya, berlatih, dan berinteraksi sehari-hari.
                         </p>
                         <div className="h-[2px] w-20 bg-[#C99B53] mx-auto mt-2" />
-                    </div>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {coreValues.map((value, idx) => (
-                            <div
+                            <ScrollReveal
                                 key={idx}
-                                className="bg-[#FAF6F0] rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start group"
+                                delay={idx * 150}
+                                distance="40px"
+                                className="flex"
                             >
-                                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner mb-6 group-hover:scale-105 transition-transform duration-200">
-                                    {value.icon}
+                                <div
+                                    className="bg-[#FAF6F0] rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start group w-full"
+                                >
+                                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner mb-6 group-hover:scale-105 transition-transform duration-200">
+                                        {value.icon}
+                                    </div>
+                                    <h3 className="text-lg font-serif font-bold text-[#261E14] mb-3">
+                                        {value.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-600 leading-relaxed font-sans">
+                                        {value.desc}
+                                    </p>
                                 </div>
-                                <h3 className="text-lg font-serif font-bold text-[#261E14] mb-3">
-                                    {value.title}
-                                </h3>
-                                <p className="text-sm text-gray-600 leading-relaxed font-sans">
-                                    {value.desc}
-                                </p>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>

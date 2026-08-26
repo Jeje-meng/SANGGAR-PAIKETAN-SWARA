@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function News() {
     const articles = [
@@ -63,65 +64,73 @@ export default function News() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
                 {/* Hero Featured Article */}
-                <div className="bg-white rounded-2xl overflow-hidden border border-[#C99B53]/15 shadow-md mb-16 hover:shadow-lg transition-all duration-300">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-                        <div className="lg:col-span-6 relative min-h-[300px]">
-                            <img
-                                src="https://images.unsplash.com/photo-1513829096963-8a30ef68ad66?q=80&w=1200&auto=format&fit=crop"
-                                alt="Festival Gamelan"
-                                className="w-full h-full object-cover absolute inset-0"
-                            />
-                        </div>
-                        <div className="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-center space-y-6">
-                            <span className="self-start text-[10px] tracking-widest font-bold bg-[#FAF6F0] text-[#C99B53] px-3.5 py-1.5 rounded-full border border-[#C99B53]/15">
-                                ACARA KHUSUS
-                            </span>
-                            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#261E14] leading-tight">
-                                Festival Gamelan Bali Tahunan Kembali Digelar di Sanggar Paiketan Swara
-                            </h2>
-                            <p className="text-sm text-gray-600 leading-relaxed font-sans">
-                                Menyambut bulan purnama, sanggar kami menjadi tuan rumah bagi lebih dari 50 seniman gamelan dari seluruh penjuru Bali. Festival ini bertujuan untuk melestarikan langgam-langgam kuno yang jarang dimainkan di era modern.
-                            </p>
-                            <button className="self-start inline-flex items-center gap-1.5 text-xs font-bold text-[#C99B53] hover:text-[#B7863F] uppercase tracking-wider transition-colors duration-200 mt-2 cursor-pointer">
-                                BACA SELENGKAPNYA <ChevronRight size={16} />
-                            </button>
+                <ScrollReveal distance="40px">
+                    <div className="bg-white rounded-2xl overflow-hidden border border-[#C99B53]/15 shadow-md mb-16 hover:shadow-lg transition-all duration-300">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+                            <div className="lg:col-span-6 relative min-h-[300px]">
+                                <img
+                                    src="https://images.unsplash.com/photo-1513829096963-8a30ef68ad66?q=80&w=1200&auto=format&fit=crop"
+                                    alt="Festival Gamelan"
+                                    className="w-full h-full object-cover absolute inset-0"
+                                />
+                            </div>
+                            <div className="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-center space-y-6">
+                                <span className="self-start text-[10px] tracking-widest font-bold bg-[#FAF6F0] text-[#C99B53] px-3.5 py-1.5 rounded-full border border-[#C99B53]/15">
+                                    ACARA KHUSUS
+                                </span>
+                                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#261E14] leading-tight">
+                                    Festival Gamelan Bali Tahunan Kembali Digelar di Sanggar Paiketan Swara
+                                </h2>
+                                <p className="text-sm text-gray-600 leading-relaxed font-sans">
+                                    Menyambut bulan purnama, sanggar kami menjadi tuan rumah bagi lebih dari 50 seniman gamelan dari seluruh penjuru Bali. Festival ini bertujuan untuk melestarikan langgam-langgam kuno yang jarang dimainkan di era modern.
+                                </p>
+                                <button className="self-start inline-flex items-center gap-1.5 text-xs font-bold text-[#C99B53] hover:text-[#B7863F] uppercase tracking-wider transition-colors duration-200 mt-2 cursor-pointer">
+                                    BACA SELENGKAPNYA <ChevronRight size={16} />
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </ScrollReveal>
 
                 {/* Articles Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {articles.map((item, idx) => (
-                        <div
+                        <ScrollReveal
                             key={idx}
-                            className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C99B53]/25 transition-all duration-300 flex flex-col justify-between"
+                            delay={(idx % 3) * 150}
+                            distance="30px"
+                            className="flex"
                         >
-                            <div>
-                                <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                                    />
+                            <div
+                                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C99B53]/25 transition-all duration-300 flex flex-col justify-between w-full"
+                            >
+                                <div>
+                                    <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                        />
+                                    </div>
+                                    <div className="p-6 space-y-4">
+                                        <span className="text-[9px] tracking-widest font-bold text-[#C99B53] uppercase bg-[#FAF6F0] px-2.5 py-1 rounded border border-[#C99B53]/10 inline-block">
+                                            {item.tag}
+                                        </span>
+                                        <h3 className="text-lg font-serif font-bold text-[#261E14] leading-snug">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-sans line-clamp-3">
+                                            {item.desc}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="p-6 space-y-4">
-                                    <span className="text-[9px] tracking-widest font-bold text-[#C99B53] uppercase bg-[#FAF6F0] px-2.5 py-1 rounded border border-[#C99B53]/10 inline-block">
-                                        {item.tag}
-                                    </span>
-                                    <h3 className="text-lg font-serif font-bold text-[#261E14] leading-snug">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-sans line-clamp-3">
-                                        {item.desc}
-                                    </p>
+                                <div className="p-6 pt-0 border-t border-dashed border-gray-100 mt-4">
+                                    <button className="inline-flex items-center gap-1 text-xs font-bold text-[#C99B53] hover:text-[#B7863F] uppercase tracking-wider transition-colors duration-200 cursor-pointer">
+                                        BACA SELENGKAPNYA <ChevronRight size={14} />
+                                    </button>
                                 </div>
                             </div>
-                            <div className="p-6 pt-0 border-t border-dashed border-gray-100 mt-4">
-                                <button className="inline-flex items-center gap-1 text-xs font-bold text-[#C99B53] hover:text-[#B7863F] uppercase tracking-wider transition-colors duration-200 cursor-pointer">
-                                    BACA SELENGKAPNYA <ChevronRight size={14} />
-                                </button>
-                            </div>
-                        </div>
+                        </ScrollReveal>
                     ))}
                 </div>
 

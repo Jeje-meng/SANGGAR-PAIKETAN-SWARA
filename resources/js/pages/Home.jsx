@@ -1,5 +1,6 @@
 import React from 'react';
 import { Music, Accessibility, Sparkles, GraduationCap, MessageCircle, Globe, Star, Heart, Users, Compass, ChevronRight } from 'lucide-react';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function Home({ changePage }) {
     const programs = [
@@ -140,7 +141,7 @@ export default function Home({ changePage }) {
             <section className="py-24 bg-[#FAF6F0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div className="lg:col-span-7 space-y-6">
+                        <ScrollReveal className="lg:col-span-7 space-y-6" distance="40px">
                             <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase block">
                                 — TENTANG KAMI
                             </span>
@@ -161,8 +162,8 @@ export default function Home({ changePage }) {
                                 Ketahui Lebih Lanjut 
                                 <ChevronRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
                             </button>
-                        </div>
-                        <div className="lg:col-span-5">
+                        </ScrollReveal>
+                        <ScrollReveal className="lg:col-span-5" delay={200} distance="40px">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#C99B53]/10 transform hover:scale-[1.01] transition-transform duration-300">
                                 <img
                                     src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=800&auto=format&fit=crop"
@@ -171,7 +172,7 @@ export default function Home({ changePage }) {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -179,47 +180,55 @@ export default function Home({ changePage }) {
             {/* PROGRAMS SECTION */}
             <section className="py-24 bg-white border-t border-b border-[#C99B53]/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase block mb-3">
-                        — PROGRAM KAMI —
-                    </span>
-                    <h2 className="text-3xl sm:text-4xl font-serif text-[#261E14] font-bold mb-4">
-                        Pengalaman yang Kami Tawarkan
-                    </h2>
-                    <p className="text-sm text-gray-500 max-w-xl mx-auto mb-16">
-                        Pilihlah petualangan budaya Anda, dari pemula hingga program khusus.
-                    </p>
+                    <ScrollReveal distance="30px">
+                        <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase block mb-3">
+                            — PROGRAM KAMI —
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl font-serif text-[#261E14] font-bold mb-4">
+                            Pengalaman yang Kami Tawarkan
+                        </h2>
+                        <p className="text-sm text-gray-500 max-w-xl mx-auto mb-16">
+                            Pilihlah petualangan budaya Anda, dari pemula hingga program khusus.
+                        </p>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {programs.map((item, idx) => (
-                            <div
+                            <ScrollReveal
                                 key={idx}
-                                className="relative bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col group text-left"
+                                delay={idx * 150}
+                                distance="40px"
+                                className="flex"
                             >
-                                {/* Photo Header */}
-                                <div className="relative h-44 overflow-hidden">
-                                    <img 
-                                        src={item.img} 
-                                        alt={item.title} 
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                                </div>
-                                
-                                {/* Floating Pin Badge */}
-                                <div className="absolute right-6 top-38 w-12 h-12 rounded-full bg-white border border-[#C99B53]/30 shadow-md flex items-center justify-center text-[#C99B53] z-10">
-                                    {item.icon}
-                                </div>
+                                <div
+                                    className="relative bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col group text-left w-full"
+                                >
+                                    {/* Photo Header */}
+                                    <div className="relative h-44 overflow-hidden">
+                                        <img 
+                                            src={item.img} 
+                                            alt={item.title} 
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                                    </div>
+                                    
+                                    {/* Floating Pin Badge */}
+                                    <div className="absolute right-6 top-38 w-12 h-12 rounded-full bg-white border border-[#C99B53]/30 shadow-md flex items-center justify-center text-[#C99B53] z-10">
+                                        {item.icon}
+                                    </div>
 
-                                {/* Card Body */}
-                                <div className="p-6 pt-8 flex-grow flex flex-col">
-                                    <h3 className="text-lg font-serif font-bold text-[#261E14] mb-3">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-xs text-gray-500 leading-relaxed font-sans">
-                                        {item.desc}
-                                    </p>
+                                    {/* Card Body */}
+                                    <div className="p-6 pt-8 flex-grow flex flex-col">
+                                        <h3 className="text-lg font-serif font-bold text-[#261E14] mb-3">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-xs text-gray-500 leading-relaxed font-sans">
+                                            {item.desc}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
@@ -229,7 +238,7 @@ export default function Home({ changePage }) {
             <section className="py-24 bg-[#1C150C] text-[#FAF6F0] relative overflow-hidden">
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-black/20 to-transparent" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <ScrollReveal className="text-center mb-16" distance="30px">
                         <span className="text-xs font-bold tracking-widest text-[#C99B53] uppercase block mb-3">
                             — PILIHAN PAKET —
                         </span>
@@ -237,73 +246,79 @@ export default function Home({ changePage }) {
                             Paket Edu-Wisata Seni Budaya
                         </h2>
                         <div className="h-[2px] w-24 bg-[#C99B53] mx-auto mt-4" />
-                    </div>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                         {packages.map((item, idx) => (
-                            <div
+                            <ScrollReveal
                                 key={idx}
-                                className={`rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 ${
-                                    item.populer
-                                        ? 'bg-[#C99B53] text-[#261E14] ring-4 ring-[#C99B53]/30 scale-[1.03] lg:-translate-y-2'
-                                        : 'bg-[#261E14] text-gray-200 border border-gray-800'
-                                }`}
+                                delay={idx * 150}
+                                distance="40px"
+                                className="flex"
                             >
-                                <div>
-                                    {/* Tag Populer */}
-                                    <div className="flex justify-between items-start mb-6">
-                                        <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
-                                            item.populer ? 'bg-[#261E14] text-[#C99B53]' : 'bg-[#C99B53] text-[#261E14]'
-                                        }`}>
-                                            {item.num}
-                                        </span>
-                                        {item.populer && (
-                                            <span className="bg-[#8B261E] text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
-                                                POPULER
+                                <div
+                                    className={`rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 w-full ${
+                                        item.populer
+                                            ? 'bg-[#C99B53] text-[#261E14] ring-4 ring-[#C99B53]/30 scale-[1.03] lg:-translate-y-2'
+                                            : 'bg-[#261E14] text-gray-200 border border-gray-800'
+                                    }`}
+                                >
+                                    <div>
+                                        {/* Tag Populer */}
+                                        <div className="flex justify-between items-start mb-6">
+                                            <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                                                item.populer ? 'bg-[#261E14] text-[#C99B53]' : 'bg-[#C99B53] text-[#261E14]'
+                                            }`}>
+                                                {item.num}
                                             </span>
-                                        )}
-                                    </div>
-
-                                    <h3 className="text-2xl font-serif font-bold mb-4">{item.title}</h3>
-                                    <p className={`text-sm leading-relaxed mb-6 ${item.populer ? 'text-[#261E14]/85' : 'text-gray-400'}`}>
-                                        {item.desc}
-                                    </p>
-
-                                    <div className={`h-[1px] w-full my-6 ${item.populer ? 'bg-[#261E14]/20' : 'bg-gray-800'}`} />
-
-                                    <ul className="space-y-3 mb-8">
-                                        {item.features.map((feat, fIdx) => (
-                                            <li key={fIdx} className="flex items-center gap-3 text-sm">
-                                                <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                                                    item.populer ? 'bg-[#8B261E]' : 'bg-[#C99B53]'
-                                                }`} />
-                                                <span>{feat}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                <div className="pt-6 border-t border-dashed border-[#261E14]/15">
-                                    <div className="flex items-baseline justify-between mb-6">
-                                        <span className="text-xs uppercase tracking-widest text-opacity-80">
-                                            Per Peserta
-                                        </span>
-                                        <div className="flex items-baseline gap-1">
-                                            <span className="text-2xl sm:text-3xl font-serif font-bold">{item.price}</span>
+                                            {item.populer && (
+                                                <span className="bg-[#8B261E] text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                                                    POPULER
+                                                </span>
+                                            )}
                                         </div>
+
+                                        <h3 className="text-2xl font-serif font-bold mb-4">{item.title}</h3>
+                                        <p className={`text-sm leading-relaxed mb-6 ${item.populer ? 'text-[#261E14]/85' : 'text-gray-400'}`}>
+                                            {item.desc}
+                                        </p>
+
+                                        <div className={`h-[1px] w-full my-6 ${item.populer ? 'bg-[#261E14]/20' : 'bg-gray-800'}`} />
+
+                                        <ul className="space-y-3 mb-8">
+                                            {item.features.map((feat, fIdx) => (
+                                                <li key={fIdx} className="flex items-center gap-3 text-sm">
+                                                    <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                                                        item.populer ? 'bg-[#8B261E]' : 'bg-[#C99B53]'
+                                                    }`} />
+                                                    <span>{feat}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
-                                    <button
-                                        onClick={() => changePage('reservation')}
-                                        className={`w-full py-3.5 text-center font-bold rounded-lg transition-all duration-200 cursor-pointer ${
-                                            item.populer
-                                                ? 'bg-[#261E14] text-[#C99B53] hover:bg-[#1C150C] shadow-md'
-                                                : 'bg-[#C99B53] text-[#261E14] hover:bg-[#B7863F]'
-                                        }`}
-                                    >
-                                        Pilih Paket
-                                    </button>
+
+                                    <div className="pt-6 border-t border-dashed border-[#261E14]/15">
+                                        <div className="flex items-baseline justify-between mb-6">
+                                            <span className="text-xs uppercase tracking-widest text-opacity-80">
+                                                Per Peserta
+                                            </span>
+                                            <div className="flex items-baseline gap-1">
+                                                <span className="text-2xl sm:text-3xl font-serif font-bold">{item.price}</span>
+                                            </div>
+                                        </div>
+                                        <button
+                                            onClick={() => changePage('reservation')}
+                                            className={`w-full py-3.5 text-center font-bold rounded-lg transition-all duration-200 cursor-pointer ${
+                                                item.populer
+                                                    ? 'bg-[#261E14] text-[#C99B53] hover:bg-[#1C150C] shadow-md'
+                                                    : 'bg-[#C99B53] text-[#261E14] hover:bg-[#B7863F]'
+                                            }`}
+                                        >
+                                            Pilih Paket
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>

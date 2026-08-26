@@ -22,8 +22,27 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Custom CSS Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C99B53;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B7863F;
+}
+
 /* Hide scrollbars during page transition */
 html.transitioning,
 html.transitioning body {
   overflow: hidden !important;
+}
+html.transitioning::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
 }

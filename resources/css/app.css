@@ -21,3 +21,9 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
 }
+
+/* Hide scrollbars during page transition */
+html.transitioning,
+html.transitioning body {
+  overflow: hidden !important;
+}

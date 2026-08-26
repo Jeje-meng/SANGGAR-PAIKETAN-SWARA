@@ -18,6 +18,7 @@ export default function App() {
 
     const changePage = (newPage) => {
         if (newPage === page) return;
+        document.documentElement.classList.add('transitioning');
         setVisible(false);
         setPage(newPage);
     };
@@ -28,6 +29,11 @@ export default function App() {
                 setRenderedPage(page);
                 setVisible(true);
                 window.scrollTo({ top: 0, behavior: 'instant' });
+                
+                const restoreTimer = setTimeout(() => {
+                    document.documentElement.classList.remove('transitioning');
+                }, 100);
+                return () => clearTimeout(restoreTimer);
             }, 400); // 400ms transitions
             return () => clearTimeout(timer);
         }

@@ -61,7 +61,6 @@ export default function Partnership({ content }) {
             benefits: ["Semua keuntungan Pelindung Budaya", "Pementasan privat khusus di acara perusahaan/keluarga", "Logo perusahaan/komunitas tertera di media promosi utama"]
         }
     ];
-    ];
 
     return (
         <div className="bg-[#FAF6F0] min-h-screen pb-20 font-sans">
@@ -194,9 +193,6 @@ export default function Partnership({ content }) {
                                 {content('partnership_callout_desc', 'Apakah institusi Anda memiliki fokus riset etnologi musik, program CSR pemberdayaan perempuan pelaku seni, atau kunjungan tahunan siswa? Kami dapat merancang proyek kerja sama jangka panjang yang relevan dan transparan.')}
                             </p>
                         </div>
-                    </div>
-                </ScrollReveal>
-                        </p>
                     </div>
                 </ScrollReveal>
 

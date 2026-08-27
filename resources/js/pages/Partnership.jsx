@@ -193,14 +193,11 @@ export default function Partnership({ content }) {
                                 {content('partnership_callout_desc', 'Apakah institusi Anda memiliki fokus riset etnologi musik, program CSR pemberdayaan perempuan pelaku seni, atau kunjungan tahunan siswa? Kami dapat merancang proyek kerja sama jangka panjang yang relevan dan transparan.')}
                             </p>
                         </div>
-<<<<<<< HEAD
-=======
                         <div className="lg:col-span-4 flex justify-end">
                             <button onClick={scrollToForm} className="w-full lg:w-auto px-6 py-3.5 bg-[#C99B53] hover:bg-[#B7863F] text-[#261E14] font-bold text-xs rounded-md shadow-md flex items-center justify-center gap-2 transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer">
                                 Ajukan Proposal
                             </button>
                         </div>
->>>>>>> 0c81a9e (Menambahkan fitur edit dinamis untuk Beranda, Program, dan Galeri di Dasbor Admin)
                     </div>
                 </ScrollReveal>
 

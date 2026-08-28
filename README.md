@@ -68,7 +68,10 @@ Setelah server berjalan, Anda dapat mengelola konten website (CMS) dengan mengak
 - **Password**: `password`
 
 ---
-
+## Migrate dulu biar ada database 
+``` bash
+php artisan migrate
+```
 ## 🎭 Animasi Transisi Halaman (Fade-In-Out)
 
 Website ini menggunakan sistem routing berbasis state di dalam `App.jsx` dan dibalut oleh `PageWrapper.jsx` untuk menciptakan perpindahan halaman yang profesional:

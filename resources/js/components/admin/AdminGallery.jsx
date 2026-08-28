@@ -7,6 +7,12 @@ export default function AdminGallery() {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('general');
     const [uploading, setUploading] = useState(false);
+    const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
+
+    const showToast = (message, type = 'success') => {
+        setToast({ show: true, message, type });
+        setTimeout(() => setToast({ show: false, message: '', type: 'success' }), 3000);
+    };
 
     useEffect(() => {
         fetchGallery();
@@ -34,9 +40,10 @@ export default function AdminGallery() {
             setImage(null);
             setTitle('');
             fetchGallery();
-            alert('Upload berhasil!');
+            showToast('Upload berhasil!');
         } catch (err) {
-            alert('Gagal upload gambar.');
+            const errorMsg = err.response?.data?.message || 'Gagal upload gambar.';
+            showToast(errorMsg, 'error');
         }
         setUploading(false);
     };
@@ -46,8 +53,9 @@ export default function AdminGallery() {
         try {
             await axios.delete(`/api/gallery/${id}`);
             fetchGallery();
+            showToast('Gambar berhasil dihapus!');
         } catch (err) {
-            alert('Gagal menghapus gambar.');
+            showToast('Gagal menghapus gambar.', 'error');
         }
     };
 
@@ -94,6 +102,18 @@ export default function AdminGallery() {
                     </div>
                 ))}
             </div>
+
+            {/* Custom Toast Notification */}
+            {toast.show && (
+                <div className={`fixed bottom-8 right-8 px-6 py-3 rounded-lg shadow-lg font-semibold text-sm transform transition-all duration-300 translate-y-0 opacity-100 flex items-center gap-3 z-50 ${toast.type === 'error' ? 'bg-red-500 text-white' : 'bg-emerald-500 text-white'}`}>
+                    {toast.type === 'error' ? (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    ) : (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    )}
+                    {toast.message}
+                </div>
+            )}
         </div>
     );
 }

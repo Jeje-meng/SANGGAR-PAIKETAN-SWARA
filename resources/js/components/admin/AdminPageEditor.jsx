@@ -6,12 +6,25 @@ const PAGE_SCHEMAS = {
     beranda: {
         title: "Kelola Halaman Beranda",
         fields: [
+            { key: 'home_hero_bg', label: 'Gambar Latar (Hero Background)', type: 'image', section: 'beranda' },
             { key: 'home_hero_title', label: 'Judul Utama (Hero)', type: 'text', section: 'beranda' },
             { key: 'home_hero_desc', label: 'Deskripsi Singkat (Hero)', type: 'text', section: 'beranda' },
             { key: 'home_about_title', label: 'Judul Tentang Kami', type: 'text', section: 'beranda' },
             { key: 'home_about_desc1', label: 'Paragraf Tentang Kami 1', type: 'text', section: 'beranda' },
             { key: 'home_about_desc2', label: 'Paragraf Tentang Kami 2', type: 'text', section: 'beranda' },
-            { key: 'home_about_image', label: 'Gambar Tentang Kami', type: 'image', section: 'beranda' }
+            { key: 'home_about_image', label: 'Gambar Tentang Kami', type: 'image', section: 'beranda' },
+            { key: 'home_program_1_title', label: 'Judul Program 1', type: 'text', section: 'beranda' },
+            { key: 'home_program_1_desc', label: 'Deskripsi Program 1', type: 'text', section: 'beranda' },
+            { key: 'home_program_1_img', label: 'Gambar Program 1', type: 'image', section: 'beranda' },
+            { key: 'home_program_2_title', label: 'Judul Program 2', type: 'text', section: 'beranda' },
+            { key: 'home_program_2_desc', label: 'Deskripsi Program 2', type: 'text', section: 'beranda' },
+            { key: 'home_program_2_img', label: 'Gambar Program 2', type: 'image', section: 'beranda' },
+            { key: 'home_program_3_title', label: 'Judul Program 3', type: 'text', section: 'beranda' },
+            { key: 'home_program_3_desc', label: 'Deskripsi Program 3', type: 'text', section: 'beranda' },
+            { key: 'home_program_3_img', label: 'Gambar Program 3', type: 'image', section: 'beranda' },
+            { key: 'home_program_4_title', label: 'Judul Program 4', type: 'text', section: 'beranda' },
+            { key: 'home_program_4_desc', label: 'Deskripsi Program 4', type: 'text', section: 'beranda' },
+            { key: 'home_program_4_img', label: 'Gambar Program 4', type: 'image', section: 'beranda' }
         ]
     },
     tentangkami: {
@@ -45,6 +58,14 @@ const PAGE_SCHEMAS = {
             { key: 'news_hero_desc', label: 'Deskripsi Hero', type: 'text', section: 'berita' }
         ]
     },
+    galeri: {
+        title: "Kelola Halaman Galeri",
+        fields: [
+            { key: 'gallery_banner', label: 'Gambar Banner Galeri', type: 'image', section: 'galeri' },
+            { key: 'gallery_title', label: 'Judul Halaman', type: 'text', section: 'galeri' },
+            { key: 'gallery_desc', label: 'Deskripsi Halaman', type: 'text', section: 'galeri' }
+        ]
+    },
     kemitraan: {
         title: "Kelola Halaman Kemitraan",
         fields: [
@@ -73,6 +94,12 @@ export default function AdminPageEditor() {
     const { slug } = useParams();
     const [contents, setContents] = useState([]);
     const [saving, setSaving] = useState(false);
+    const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
+
+    const showToast = (message, type = 'success') => {
+        setToast({ show: true, message, type });
+        setTimeout(() => setToast({ show: false, message: '', type: 'success' }), 3000);
+    };
 
     const schema = PAGE_SCHEMAS[slug] || { title: "Halaman Tidak Ditemukan", fields: [] };
 
@@ -116,8 +143,10 @@ export default function AdminPageEditor() {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             handleChange(key, res.data.path, type, section);
+            showToast('Gambar berhasil diupload!');
         } catch (err) {
-            alert('Gagal upload gambar konten.');
+            const errorMsg = err.response?.data?.message || 'Gagal upload gambar konten.';
+            showToast(errorMsg, 'error');
         }
     };
 
@@ -125,9 +154,9 @@ export default function AdminPageEditor() {
         setSaving(true);
         try {
             await axios.post('/api/content', { contents });
-            alert('Berhasil disimpan!');
+            showToast('Berhasil disimpan!');
         } catch (e) {
-            alert('Gagal menyimpan.');
+            showToast('Gagal menyimpan perubahan.', 'error');
         }
         setSaving(false);
     };
@@ -138,8 +167,8 @@ export default function AdminPageEditor() {
 
     return (
         <div className="max-w-4xl">
-            <div className="flex justify-between items-center mb-8">
-                <h1 className="text-3xl font-bold font-admin-serif text-admin-primary">{schema.title}</h1>
+            <div className="sticky top-0 z-40 flex justify-between items-center mb-8 bg-[#FAF6F0]/95 backdrop-blur-md py-4 border-b border-admin-primary/10 -mx-2 px-2 sm:-mx-6 sm:px-6">
+                <h1 className="text-2xl sm:text-3xl font-bold font-admin-serif text-admin-primary">{schema.title}</h1>
                 <button 
                     onClick={handleSave} 
                     disabled={saving} 
@@ -184,6 +213,18 @@ export default function AdminPageEditor() {
                     </div>
                 ))}
             </div>
+
+            {/* Custom Toast Notification */}
+            {toast.show && (
+                <div className={`fixed bottom-8 right-8 px-6 py-3 rounded-lg shadow-lg font-semibold text-sm transform transition-all duration-300 translate-y-0 opacity-100 flex items-center gap-3 z-50 ${toast.type === 'error' ? 'bg-red-500 text-white' : 'bg-emerald-500 text-white'}`}>
+                    {toast.type === 'error' ? (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    ) : (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    )}
+                    {toast.message}
+                </div>
+            )}
         </div>
     );
 }

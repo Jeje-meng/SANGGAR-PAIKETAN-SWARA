@@ -201,7 +201,7 @@ export default function Home({ changePage, content }) {
             {/* SECTION: PILIHAN PAKET / PAKET EDU-WISATA SENI BUDAYA */}
             <section className="py-20 bg-[#FAF6F0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <ScrollReveal className="text-center mb-12" distance="30px" className="space-y-2 text-center mb-12">
+                    <ScrollReveal distance="30px" className="space-y-2 text-center mb-12">
                         <span className="text-[10px] font-bold tracking-widest text-[#C99B53] uppercase block">
                             — PILIHAN PAKET —
                         </span>

@@ -293,7 +293,7 @@ export default function Partnership({ content }) {
                                     {/* Submit Button */}
                                     <button
                                         type="submit"
-                                        className="px-10 py-3.5 bg-black hover:bg-zinc-900 text-white font-bold text-sm rounded-lg shadow-sm transition-colors duration-200 cursor-pointer block mx-auto uppercase tracking-wider"
+                                        className="px-10 py-3.5 bg-black hover:bg-zinc-900 text-white font-bold text-xs rounded-lg shadow-sm transition-colors duration-200 cursor-pointer block mx-auto uppercase tracking-wider"
                                     >
                                         Ajukan Kerja Sama
                                     </button>

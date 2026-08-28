@@ -6,27 +6,27 @@ export default function Home({ changePage, content }) {
     const programs = [
         {
             icon: <Music className="w-6 h-6 text-[#C99B53]" />,
-            title: "Belajar Gamelan Bali",
-            desc: "Kenali berbagai instrumen gamelan, cara memainkannya, serta peran setiap instrumen dalam menciptakan sebuah komposisi yang harmonis.",
-            img: "/images/news_banner.png"
+            title: content('home_program_1_title', 'Belajar Gamelan Bali'),
+            desc: content('home_program_1_desc', 'Kenali berbagai instrumen gamelan, cara memainkannya, serta peran setiap instrumen dalam menciptakan sebuah komposisi yang harmonis.'),
+            img: content('home_program_1_img', '/images/news_banner.png').startsWith('http') || content('home_program_1_img', '/images/news_banner.png').startsWith('/') ? content('home_program_1_img', '/images/news_banner.png') : `/storage/${content('home_program_1_img')}`
         },
         {
             icon: <Accessibility className="w-6 h-6 text-[#C99B53]" />,
-            title: "Belajar Tari Bali",
-            desc: "Pelajari gerak-gerak dasar, ekspresi, postur dan kelenturan yang menjadi ciri khas tari Bali dari para penari terlatih dan berpengalaman.",
-            img: "/images/about_banner.png"
+            title: content('home_program_2_title', 'Belajar Tari Bali'),
+            desc: content('home_program_2_desc', 'Pelajari gerak-gerak dasar, ekspresi, postur dan kelenturan yang menjadi ciri khas tari Bali dari para penari terlatih dan berpengalaman.'),
+            img: content('home_program_2_img', '/images/about_banner.png').startsWith('http') || content('home_program_2_img', '/images/about_banner.png').startsWith('/') ? content('home_program_2_img', '/images/about_banner.png') : `/storage/${content('home_program_2_img')}`
         },
         {
             icon: <Sparkles className="w-6 h-6 text-[#C99B53]" />,
-            title: "Pertunjukan Seni",
-            desc: "Saksikan kolaborasi pertunjukan gamelan dan tari yang dibawakan oleh para seniman berbakat dari Sanggar Paiketan Swara.",
-            img: "/images/partnership_banner.png"
+            title: content('home_program_3_title', 'Pertunjukan Seni'),
+            desc: content('home_program_3_desc', 'Saksikan kolaborasi pertunjukan gamelan dan tari yang dibawakan oleh para seniman berbakat dari Sanggar Paiketan Swara.'),
+            img: content('home_program_3_img', '/images/partnership_banner.png').startsWith('http') || content('home_program_3_img', '/images/partnership_banner.png').startsWith('/') ? content('home_program_3_img', '/images/partnership_banner.png') : `/storage/${content('home_program_3_img')}`
         },
         {
             icon: <GraduationCap className="w-6 h-6 text-[#C99B53]" />,
-            title: "Kunjungan Edukasi",
-            desc: "Program khusus untuk sekolah, universitas, komunitas, atau kelompok wisatawan yang ingin mendalami budaya Bali secara komprehensif.",
-            img: "/images/gallery_banner.png"
+            title: content('home_program_4_title', 'Kunjungan Edukasi'),
+            desc: content('home_program_4_desc', 'Program khusus untuk sekolah, universitas, komunitas, atau kelompok wisatawan yang ingin mendalami budaya Bali secara komprehensif.'),
+            img: content('home_program_4_img', '/images/gallery_banner.png').startsWith('http') || content('home_program_4_img', '/images/gallery_banner.png').startsWith('/') ? content('home_program_4_img', '/images/gallery_banner.png') : `/storage/${content('home_program_4_img')}`
         }
     ];
 
@@ -96,7 +96,13 @@ export default function Home({ changePage, content }) {
                 {/* Background image overlay */}
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('/images/image.png')` }}
+                    style={{ 
+                        backgroundImage: `url('${
+                            content('home_hero_bg', '/images/image.png').startsWith('http') || content('home_hero_bg', '/images/image.png').startsWith('/') 
+                                ? content('home_hero_bg', '/images/image.png') 
+                                : `/storage/${content('home_hero_bg')}`
+                        }')` 
+                    }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#1C150C]/90 via-[#261E14]/80 to-[#261E14]/40" />
  
